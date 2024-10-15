@@ -26,6 +26,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=secret
     networks:
        - profile-network
+    volumes:    # NEW
+      - ./data:/data/db
 
   mongo-express:
     container_name: express
@@ -41,4 +43,6 @@ services:
        - profile-network
     depends_on:
       - mongodb
-      
+
+
+         
